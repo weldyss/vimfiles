@@ -1,11 +1,3 @@
-""
-"" Thanks:
-""   Gary Bernhardt  <destroyallsoftware.com>
-""   Drew Neil  <vimcasts.org>
-""   Tim Pope  <tbaggery.com>
-""   Janus  <github.com/carlhuda/janus>
-""
-
 set nocompatible
 syntax enable
 set encoding=utf-8
@@ -13,9 +5,10 @@ set encoding=utf-8
 call pathogen#infect()
 filetype plugin indent on
 
+"let g:solarized_termcolors=256
 set background=dark
-color molokai
-set nonumber
+color solarized
+set number
 set ruler       " show the cursor position all the time
 set cursorline
 set showcmd     " display incomplete commands
@@ -24,12 +17,15 @@ set showcmd     " display incomplete commands
 " for backgrounded buffers
 set hidden
 
+set winheight=30
+set winminheight=5
+
 "" Whitespace
 set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
-set list                          " Show invisible characters
+"set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 " List chars
 set listchars=""                  " Reset the listchars
@@ -73,6 +69,11 @@ endif
 " provide some context when editing
 set scrolloff=3
 
+" mouse configs
+set mouse=a
+set ttymouse=xterm2
+
+
 " don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -86,12 +87,15 @@ map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
 map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>T :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>rl :RunSpecLine<cr>
+map <leader>rf :RunSpec<cr>
+map <leader>vs :vsplit<cr>
 
 nnoremap <leader><leader> <c-^>
 
@@ -107,10 +111,11 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " disable cursor keys in normal mode
-map <Left>  :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up>    :echo "no!"<cr>
-map <Down>  :echo "no!"<cr>
+"map <Left>  :echo "no!"<cr>
+"map <Right> :echo "no!"<cr>
+"map <Up>    :echo "no!"<cr>
+"map <Down>  :echo "no!"<cr>
+map <M> :echo "fu"<cr>
 
 set backupdir=~/.vim/_backup    " where to put backup files.
 set directory=~/.vim/_temp      " where to put swap files.
@@ -121,9 +126,6 @@ if has("statusline") && !&cp
   " Start the status line
   set statusline=%f\ %m\ %r
 
-  " Add fugitive
-  set statusline+=%{fugitive#statusline()}
-
   " Finish the statusline
   set statusline+=Line:%l/%L[%p%%]
   set statusline+=Col:%v
@@ -131,4 +133,4 @@ if has("statusline") && !&cp
   set statusline+=[%b][0x%B]
 endif
 
-let g:CommandTMaxHeight=10
+let g:CommandTMaxHeight=15
