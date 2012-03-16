@@ -1,8 +1,9 @@
-Mislav's vim configuration
+My vim configuration
 ==========================
 
-Thanks to these guys:
+My vim files is based on [Mislav](http://github.com/mislav/vimfiles)
 
+Thanks to these guys:
 * [Gary Bernhardt](http://destroyallsoftware.com),
 * [Drew Neil](http://vimcasts.org),
 * [Tim Pope](http://tbaggery.com),
@@ -33,7 +34,6 @@ files inside the ".vim" directory.
 * `,f` opens file search via :CommandT plugin
 * `,,` switches between two last buffers
 * `<C-j/k/h/l>` switches between windows (no need to prepend `<C-w>`)
-* cursor keys for movement disabled!
 
 ## Plugins:
 
@@ -41,9 +41,5 @@ files inside the ".vim" directory.
 * command-t
 * commentary
 * endwise
-* fugitive
 * markdown
 * rails
-* haml
-* scss
-* coffee-script
