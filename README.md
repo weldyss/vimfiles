@@ -16,11 +16,9 @@ My configuration uses [Pathogen](https://github.com/tpope/vim-pathogen) and git 
 
 Prerequisites: ruby, git.
 
-1. Move your existing configuration somewhere else:  
-   `mv .vim* .gvim* my_backup`
-2. Clone this repo into ".vim":  
-   `git clone https://github.com/mislav/vimfiles ~/.vim`
-3. Go into ".vim" and run "rake":  
+1. Clone this repo into ".vim":  
+   `git clone https://github.com/weldyss/vimfiles ~/.vim`
+2. Go into ".vim" and run "rake":  
    `cd ~/.vim && rake`
 
 This will install "~/.vimrc" and "~/.gvimrc" symlinks that point to
@@ -31,7 +29,7 @@ files inside the ".vim" directory.
 * 2 spaces, no tabs
 * incremental, case-insensitive search
 * 'Leader' character mapped to "," (comma)
-* `,f` opens file search via :CommandT plugin
+* `,t` opens file search via :CommandT plugin
 * `,,` switches between two last buffers
 * `<C-j/k/h/l>` switches between windows (no need to prepend `<C-w>`)
 
