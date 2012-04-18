@@ -93,8 +93,6 @@ map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>T :CommandTFlush<cr>\|:CommandT %%<cr>
-map <leader>rl :RunSpecLine<cr>
-map <leader>rf :RunSpec<cr>
 map <leader>vs :vsplit<cr>
 
 nnoremap <leader><leader> <c-^>
