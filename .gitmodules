@@ -27,7 +27,7 @@
 	url = https://github.com/tpope/vim-endwise
 [submodule "bundle/command-t"]
 	path = bundle/command-t
-	url = https://github.com/wincent/Command-T
+	url = https://github.com/wincent/Command-t
 [submodule "bundle/commentary"]
 	path = bundle/commentary
 	url = https://github.com/tpope/vim-commentary
