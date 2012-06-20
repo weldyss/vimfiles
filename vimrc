@@ -82,12 +82,8 @@ map Q gq
 
 let mapleader=","
 
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
+map <leader>tl :tabNext
+map <leader>th :tabPrev
 map <leader>gg :topleft 100 :split Gemfile<cr>
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 " http://vimcasts.org/e/14
