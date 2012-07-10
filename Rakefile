@@ -30,6 +30,6 @@ task :command_t do
     ruby = %w[/usr/bin/ruby1.8 /usr/bin/ruby].find {|rb| File.executable? rb } || 'ruby' if ruby.empty?
     cmd = Array(ruby) + %w[extconf.rb]
     sh(*cmd)
-    sh "make clean && make"
+    sh "make clean && rake make"
   end
 end
