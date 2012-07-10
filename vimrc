@@ -41,12 +41,6 @@ set incsearch                     " incremental searching
 set ignorecase                    " searches are case insensitive...
 set smartcase                     " ... unless they contain at least one capital letter
 
-function s:setupWrapping()
-  set wrap
-  set wrapmargin=2
-  set textwidth=72
-endfunction
-
 if has("autocmd")
   " In Makefiles, use real tabs, not tabs expanded to spaces
   au FileType make set noexpandtab
@@ -82,15 +76,11 @@ map Q gq
 
 let mapleader=","
 
-map <leader>tl :tabNext
-map <leader>th :tabPrev
 map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>T :CommandTFlush<cr>\|:CommandT %%<cr>
-map <leader>vs :vsplit<cr>
 
+map <leader>vs :vsplit<cr>
 nnoremap <leader><leader> <c-^>
 
 " find merge conflict markers
@@ -103,6 +93,13 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" ctrl-p shortcuts
+map <leader>p :CtrlP<cr>
+map <leader>t :CtrlPMixed<cr>
+
+" ctrl-p configs
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " disable cursor keys in normal mode
 map <Left>  :echo "Solta essa porra!"<cr>
@@ -126,5 +123,3 @@ if has("statusline") && !&cp
   set statusline+=Buf:#%n
   set statusline+=[%b][0x%B]
 endif
-
-let g:CommandTMaxHeight=15
