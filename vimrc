@@ -6,7 +6,7 @@ call pathogen#infect()
 filetype plugin indent on
 
 "let g:solarized_termcolors=256
-set background=dark
+set background=light
 color solarized
 set number
 set ruler       " show the cursor position all the time
