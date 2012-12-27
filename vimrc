@@ -6,7 +6,7 @@ call pathogen#infect()
 filetype plugin indent on
 
 "let g:solarized_termcolors=256
-set background=light
+set background=dark
 color solarized
 set number
 set ruler       " show the cursor position all the time
@@ -94,12 +94,12 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" ctrl-p configs
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 " ctrl-p shortcuts
 map <leader>p :CtrlP<cr>
 map <leader>t :CtrlPMixed<cr>
-
-" ctrl-p configs
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " disable cursor keys in normal mode
 map <Left>  :echo "Solta essa porra!"<cr>
