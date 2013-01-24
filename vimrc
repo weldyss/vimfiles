@@ -99,12 +99,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " ctrl-p shortcuts
 map <leader>p :CtrlP<cr>
-map <leader>t :CtrlPMixed<cr>
-
-" mapping tab nav
-map <c-t> :tabnew<cr>
-map <c-]> :tabNext<cr>
-map <c-[> :tabprevious<cr>
 
 " disable cursor keys in normal mode
 map <Left>  :echo "Solta essa porra!"<cr>
