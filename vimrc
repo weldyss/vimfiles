@@ -110,6 +110,12 @@ map <M> :echo "fu"<cr>
 set backupdir=~/.vim/_backup    " where to put backup files.
 set directory=~/.vim/_temp      " where to put swap files.
 
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\v[\/](vendor)$'
+
+
+
+
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
 
