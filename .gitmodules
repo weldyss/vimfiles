@@ -14,8 +14,8 @@
 	path = bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby
 [submodule "bundle/vim-rspec"]
-  path = bundle/vim-rspec
-  url = https://github.com/skwp/vim-rspec.git
+	path = bundle/vim-rspec
+	url = https://github.com/thoughtbot/vim-rspec
 [submodule "bundle/vim-ruby-sinatra"]
   path = bundle/vim-ruby-sinatra
   url = https://github.com/hallison/vim-ruby-sinatra.git
