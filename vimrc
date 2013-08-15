@@ -123,7 +123,6 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
- 
   set statusline=%F%m%r%h%w
   set statusline+=\ %{fugitive#statusline()}\    
   set statusline+=\ [line\ %l\/%L]
