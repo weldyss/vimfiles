@@ -114,7 +114,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v[\/](vendor)$'
 
 " Rspec.vim mappings
-let g:rspec_command = '!bundle exec rspec {spec}'
+let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
@@ -123,13 +123,10 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
-
-  " Start the status line
-  set statusline=%f\ %m\ %r
-
-  " Finish the statusline
-  set statusline+=Line:%l/%L[%p%%]
-  set statusline+=Col:%v
-  set statusline+=Buf:#%n
-  set statusline+=[%b][0x%B]
+ 
+  set statusline=%F%m%r%h%w
+  set statusline+=\ %{fugitive#statusline()}\    
+  set statusline+=\ [line\ %l\/%L]
+  set statusline+=%=
+  set statusline+=\[%{strftime('%a\ %H:%M\')}]
 endif
