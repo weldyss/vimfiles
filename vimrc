@@ -81,6 +81,7 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 map <leader>vs :vsplit<cr>
+map <leader>sp :split<cr>
 nnoremap <leader><leader> <c-^>
 
 " find merge conflict markers
@@ -114,7 +115,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v[\/](vendor)$'
 
 " Rspec.vim mappings
-let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
+let g:rspec_command = 'bundle exec rspec {spec}'
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
