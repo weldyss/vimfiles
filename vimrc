@@ -2,12 +2,16 @@ set nocompatible
 syntax enable
 set encoding=utf-8
 
-call pathogen#infect()
-filetype plugin indent on
+"setting vundler 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+source bundles.vim
 
 "let g:solarized_termcolors=256
 set background=dark
 color solarized
+filetype plugin indent on
 set number
 set ruler       " show the cursor position all the time
 set cursorline
@@ -16,7 +20,6 @@ set showcmd     " display incomplete commands
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
 set hidden
-
 set winheight=30
 set winminheight=5
 
