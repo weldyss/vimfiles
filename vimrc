@@ -6,7 +6,7 @@ set encoding=utf-8
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-source bundles.vim
+source ~/.vim/bundles.vim
 
 "let g:solarized_termcolors=256
 set background=dark
@@ -70,6 +70,7 @@ set scrolloff=3
 set mouse=a
 set ttymouse=xterm2
 
+set clipboard=unnamed
 
 " don't use Ex mode, use Q for formatting
 map Q gq
@@ -118,11 +119,11 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v[\/](vendor)$'
 
 " Rspec.vim mappings
-let g:rspec_command = 'bundle exec rspec {spec}'
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_command = "!bundle exec rspec --drb {spec}"
+"map <Leader>t :call RunCurrentSpecFile()<CR>
+"map <Leader>s :call RunNearestSpec()<CR>
+"map <Leader>l :call RunLastSpec()<CR>
+"map <Leader>a :call RunAllSpecs()<CR>
 
 
 if has("statusline") && !&cp
@@ -133,3 +134,9 @@ if has("statusline") && !&cp
   set statusline+=%=
   set statusline+=\[%{strftime('%a\ %H:%M\')}]
 endif
+
+" another mappings
+let g:move_key_modifier = 'C'
+
+" Dispatcher
+map <Leader>t :Dispatch bundle exec rspec %<CR>
