@@ -9,7 +9,7 @@ Thanks to these guys:
 * [Tim Pope](http://tbaggery.com),
 * and the [Janus project](https://github.com/carlhuda/janus).
 
-My configuration uses [Pathogen](https://github.com/tpope/vim-pathogen) and git submodules.
+My configuration uses [Vundle](https://github.com/gmarik/Vundle.vim).
 (But you don't need to care about any of that.)
 
 ## Installation:
@@ -18,11 +18,11 @@ Prerequisites: ruby, git.
 
 1. Clone this repo into ".vim":  
    `git clone https://github.com/weldyss/vimfiles ~/.vim`
-2. Go into ".vim" and run "rake":  
+2. Go into ".vim" and run "rake": 
    `cd ~/.vim && rake`
 
-This will install "~/.vimrc" and "~/.gvimrc" symlinks that point to
-files inside the ".vim" directory.
+This will install "~/.vimrc" symlink that point to files inside
+ ".vim" directory.
 
 ## Features:
 
@@ -35,9 +35,22 @@ files inside the ".vim" directory.
 
 ## Plugins:
 
-* ack
-* command-t
-* commentary
-* endwise
-* markdown
-* rails
+* hail2u/vim-css3-syntax
+* mattn/emmet-vim
+* tpope/vim-fugitive
+* tpope/vim-rails
+* pangloss/vim-javascript
+* vim-ruby/vim-ruby
+* hallison/vim-ruby-sinatra
+* mileszs/ack.vim
+* tpope/vim-endwise
+* tpope/vim-commentary
+* mattn/gist-vim
+* mattn/webapi-vim
+* kien/ctrlp.vim
+* tpope/vim-surround
+* thoughtbot/vim-rspec
+* tpope/vim-dispatch
+* matze/vim-move
+* tpope/vim-git
+* benmills/vimux
