@@ -4,7 +4,7 @@ set encoding=utf-8
 
 "setting vundler 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/vundle.vim/
 call vundle#rc()
 source ~/.vim/bundles.vim
 
@@ -112,6 +112,20 @@ map <Up>    :echo "Solta essa porra!"<cr>
 map <Down>  :echo "Solta essa porra!"<cr>
 map <M> :echo "fu"<cr>
 
+" tabs
+nnoremap <C-t> :tabnew<CR>
+nnoremap <C-D> :tabclose<CR>
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <leader>0 :tablast<cr>
+
 set backupdir=~/.vim/_backup    " where to put backup files.
 set directory=~/.vim/_temp      " where to put swap files.
 
@@ -138,5 +152,15 @@ endif
 " another mappings
 let g:move_key_modifier = 'C'
 
-" Dispatcher
-map <Leader>t :Dispatch bundle exec rspec %<CR>
+" Vim-gist
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_update_on_write = 2
+
+" Emmet html
+let g:user_emmet_leader_key='<C-Z>'
+
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
