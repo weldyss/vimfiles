@@ -157,6 +157,14 @@ let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_update_on_write = 2
 
+" Typescript
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+
+autocmd FileType typescript :set makeprg=tsc
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
 " Emmet html
 let g:user_emmet_leader_key='<C-Z>'
 
