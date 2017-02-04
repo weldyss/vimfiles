@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/vundle.vim/
 call vundle#rc()
 source ~/.vim/bundles.vim
 
-"let g:solarized_termcolors=256
+set t_Co=256
 set background=dark
 color solarized
 filetype plugin indent on
@@ -100,7 +100,7 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " ctrl-p configs
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 " ctrl-p shortcuts
 map <leader>p :CtrlP<cr>
@@ -126,18 +126,13 @@ nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <leader>0 :tablast<cr>
 
-set backupdir=~/.vim/_backup    " where to put backup files.
-set directory=~/.vim/_temp      " where to put swap files.
+" no more backup or swap file
+set nobackup
+set noswapfile
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v[\/](vendor)$'
-
-" Rspec.vim mappings
-let g:rspec_command = "!bundle exec rspec --drb {spec}"
-"map <Leader>t :call RunCurrentSpecFile()<CR>
-"map <Leader>s :call RunNearestSpec()<CR>
-"map <Leader>l :call RunLastSpec()<CR>
-"map <Leader>a :call RunAllSpecs()<CR>
+let g:ctrlp_custom_ignore = '\v[\/](node_modules)$'
 
 
 if has("statusline") && !&cp
@@ -152,10 +147,6 @@ endif
 " another mappings
 let g:move_key_modifier = 'C'
 
-" Vim-gist
-let g:gist_clip_command = 'pbcopy'
-let g:gist_detect_filetype = 1
-let g:gist_update_on_write = 2
 
 " Typescript
 let g:typescript_compiler_binary = 'tsc'
