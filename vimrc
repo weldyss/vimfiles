@@ -20,7 +20,7 @@ set showcmd     " display incomplete commands
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
 set hidden
-set winheight=30
+set winheight=25
 set winminheight=5
 
 "" Whitespace
