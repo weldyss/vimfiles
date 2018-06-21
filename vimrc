@@ -145,6 +145,7 @@ autocmd FileType typescript syn clear foldBraces
 autocmd FileType typescript setlocal completeopt-=menu
 autocmd FileType typescript setlocal completeopt+=menu,preview
 let g:tsuquyomi_completion_detail = 1
+let g:tsuquyomi_shortest_import_path = 1
 
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
