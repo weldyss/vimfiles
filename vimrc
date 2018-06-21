@@ -100,7 +100,7 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " ctrl-p configs
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/vendor/*
 
 " ctrl-p shortcuts
 map <leader>p :CtrlP<cr>
@@ -134,6 +134,17 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v[\/](vendor)$'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules)$'
 
+" TypeScript Configurations
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+autocmd FileType typescript :set makeprg=tsc
+autocmd FileType typescript JsPreTmpl html
+autocmd FileType typescript syn clear foldBraces
+autocmd FileType typescript setlocal completeopt-=menu
+autocmd FileType typescript setlocal completeopt+=menu,preview
+let g:tsuquyomi_completion_detail = 1
 
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
@@ -148,13 +159,12 @@ endif
 let g:move_key_modifier = 'C'
 
 
-" Typescript
-let g:typescript_compiler_binary = 'tsc'
-let g:typescript_compiler_options = ''
+" You complete me
+if !exists("g:ycm_semantic_triggers")
+ let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
 
-autocmd FileType typescript :set makeprg=tsc
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
 
 " Emmet html
 let g:user_emmet_leader_key='<C-Z>'
