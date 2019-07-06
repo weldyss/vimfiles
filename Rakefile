@@ -12,9 +12,7 @@ task :link do
 end
 
 task :vundle do
-  if File.directory?("~/.vim/bundle/vundle.vim")
-    exec ("git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle.vim")
-  end
+  exec ("git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim")
   exec("vim +PluginInstall +qall")
 end
 
