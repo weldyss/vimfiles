@@ -13,7 +13,7 @@ end
 
 task :vundle do
   exec ("git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim")
-  exec("vim +PluginInstall +qall")
+  exec ("vim +PluginInstall +qall")
 end
 
 task :tmp_dirs do
