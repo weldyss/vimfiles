@@ -23,12 +23,15 @@ set hidden
 set winheight=25
 set winminheight=5
 
-"" Whitespace
+" Setting rules
+set colorcolumn=80
+
+"Whitespace
 set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
-"set list                          " Show invisible characters
+set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 " List chars
 set listchars=""                  " Reset the listchars
@@ -130,22 +133,12 @@ nnoremap <leader>0 :tablast<cr>
 set nobackup
 set noswapfile
 
+" find in project
+map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v[\/](vendor)$'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules)$'
-
-" TypeScript Configurations
-let g:typescript_compiler_binary = 'tsc'
-let g:typescript_compiler_options = ''
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-autocmd FileType typescript :set makeprg=tsc
-autocmd FileType typescript JsPreTmpl html
-autocmd FileType typescript syn clear foldBraces
-autocmd FileType typescript setlocal completeopt-=menu
-autocmd FileType typescript setlocal completeopt+=menu,preview
-let g:tsuquyomi_completion_detail = 1
-let g:tsuquyomi_shortest_import_path = 1
 
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
@@ -155,17 +148,6 @@ if has("statusline") && !&cp
   set statusline+=%=
   set statusline+=\[%{strftime('%a\ %H:%M\')}]
 endif
-
-" another mappings
-let g:move_key_modifier = 'C'
-
-
-" You complete me
-if !exists("g:ycm_semantic_triggers")
- let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
-
 
 " Emmet html
 let g:user_emmet_leader_key='<C-Z>'
