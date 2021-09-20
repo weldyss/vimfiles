@@ -102,6 +102,14 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+
+" moving lines up and down
+nnoremap <c-j> :m .+1<CR>==
+nnoremap <c-k> :m .-2<CR>==
+vnoremap <c-J> :m '>+1<CR>gv=gv
+vnoremap <c-K> :m '<-2<CR>gv=gv
+
+
 " ctrl-p configs
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/vendor/*
 
