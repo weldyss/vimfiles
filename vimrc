@@ -24,7 +24,7 @@ set winheight=25
 set winminheight=5
 
 " Setting rules
-set colorcolumn=80
+set colorcolumn=120
 
 "Whitespace
 set nowrap                        " don't wrap lines
@@ -109,6 +109,12 @@ nnoremap <c-k> :m .-2<CR>==
 vnoremap <c-J> :m '>+1<CR>gv=gv
 vnoremap <c-K> :m '<-2<CR>gv=gv
 
+" vim-airline plugin
+let g:airline_solarized_bg='dark'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " ctrl-p configs
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/vendor/*
